@@ -1,7 +1,7 @@
 //variables
 var containQ = document.querySelector("#questions")
 var containA = document.querySelector("#answers")
-var submitBtn = document.querySelector("#submit")
+var startBtn = document.querySelector("#startbutton")
 
   
   let questions = [
@@ -65,33 +65,43 @@ var submitBtn = document.querySelector("#submit")
 
 
  function buildQuestions() {
-    let answersOpt = 
-    `<label>
-        <input type="radio" name="question1" value="1">
-        1: ${questions[0].answers["1"]}
-
-    </label>
-    <label>
-        <input type="radio" name="question1" value="2">
-        2: ${questions[0].answers["2"]}
-	 </label>
-    <label>
-        <input type="radio" name="question1" value="3">
-        3: ${questions[0].answers["3"]}
-    </label>
-    <label>
-        <input type="radio" name="question1" value="4">
-        4: ${questions[0].answers["4"]}
-    </label>`
-
-    let question1 = `<div> ${questions[0].question}</div>`
-    containQ.innerHTML= question1 + answersOpt
+   
+    let questionsString = ""
    
     for (let i = 0; i < questions.length;i++) {
       console.log(questions[i])
-      let question1 = `<div> ${questions[i].question}</div>`
-      containQ.innerHTML= question1 + answersOpt
+      
+    
+      let qandaOpt = 
+    `<div class= "page">
+    <div> ${questions[i].question}</div>
+    <label>
+        <input class= "radiobtn" type="radio" name="question${i + 1}" value="1">
+        1: ${questions[i].answers["1"]}
+
+    </label>
+    <label>
+        <input class= "radiobtn" type="radio" name="question${i + 1}" value="2">
+        2: ${questions[i].answers["2"]}
+	 </label>
+    <label>
+        <input class= "radiobtn" type="radio" name="question${i + 1}" value="3">
+        3: ${questions[i].answers["3"]}
+    </label>
+    <label>
+        <input class= "radiobtn" type="radio" name="question${i + 1}" value="4">
+        4: ${questions[i].answers["4"]}
+    </label>
+    </div>`
+    
+    
+    questionsString += qandaOpt
+    
     }
+      
+      
+  containQ.innerHTML= questionsString
+    
 
     //containQ.appendChild(answersOpt)
 
@@ -99,4 +109,36 @@ var submitBtn = document.querySelector("#submit")
 
  }
 
-buildQuestions()
+
+
+
+startBtn.addEventListener("click", function() {
+  buildQuestions() 
+  var pages = document.querySelectorAll(".page")
+  var currentPage = 0 
+  
+  
+  
+   function showPage(index) {
+  
+    pages[currentPage].classList.remove("active-slide")
+    pages[index].classList.add("active-slide")
+    currentPage = index
+    
+  
+   }
+  
+   showPage(currentPage)
+  
+  
+   function showNextPage() {
+    showPage(currentPage + 1)
+  
+  
+  }
+
+  document.querySelector(".radiobtn").addEventListener("click", showNextPage)
+})
+
+
+
