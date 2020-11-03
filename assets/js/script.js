@@ -6,24 +6,24 @@ var submitBtn = document.querySelector("#submit")
   
   let questions = [
     {
-      question: "What color is the sky?",
+      question: "Commonly used data types do not include: ",
       answers: {
-        1: "Purple",
-        2: "Green",
-        3: "Red",
-        4: "Blue"
+        1: "Numbers",
+        2: "Boooleans",
+        3: "Alerts",
+        4: "Strings"
       },
-      correct: "4",
+      correct: "3",
     },
     { 
-      question: "Who discovered gravity?",
+      question: "Arrays in JavaScript can be used to store:",
       answers: {
-        1: "Purple",
-        2: "Green",
-        3: "Red",
-        4: "Blue"
+        1: "numbers and strings",
+        2: "other arrays",
+        3: "booleans",
+        4: "all of the above"
       },
-      correct: "2"
+      correct: "4"
     },
     { 
       question: "What is the best programming language?",
@@ -74,7 +74,7 @@ var submitBtn = document.querySelector("#submit")
     <label>
         <input type="radio" name="question1" value="2">
         2: ${questions[0].answers["2"]}
-	</label>
+	 </label>
     <label>
         <input type="radio" name="question1" value="3">
         3: ${questions[0].answers["3"]}
@@ -83,11 +83,15 @@ var submitBtn = document.querySelector("#submit")
         <input type="radio" name="question1" value="4">
         4: ${questions[0].answers["4"]}
     </label>`
-    
-    
-    
+
     let question1 = `<div> ${questions[0].question}</div>`
     containQ.innerHTML= question1 + answersOpt
+   
+    for (let i = 0; i < questions.length;i++) {
+      console.log(questions[i])
+      let question1 = `<div> ${questions[i].question}</div>`
+      containQ.innerHTML= question1 + answersOpt
+    }
 
     //containQ.appendChild(answersOpt)
 
