@@ -26,4 +26,20 @@ body {
   height: 200px;
   margin-top: 40px;
 }
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+
+
+}
   
+.option {
+  background-color: yellow;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}

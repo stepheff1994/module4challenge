@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+    <h2 class= "High Scores">High Scores</h2>
+    </header>
+    <section>
+        
+       
+    </section>
+    
+
+
+    
+
+
+
+
+
+    <script>
+        let highScores = JSON.parse(localStorage.getItem("high-scores"))
+        let scorePage = ""
+        for (let score in highScores) {
+            scorePage += `
+            <p>${score}: ${highScores[score]}</p>`
+        }
+        document.querySelector("section").innerHTML = scorePage
+
+    </script>
+</body>
+</html>
