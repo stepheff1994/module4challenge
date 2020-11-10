@@ -2,10 +2,16 @@ body {
   padding: 20px;
 }
 
+.title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .h2 {
   text-align: center;
   font-size: large;
-  
 }
 .page {
   position: absolute;
@@ -15,31 +21,42 @@ body {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s;
-
 }
-.active-slide{
+.active-slide {
   opacity: 1;
   z-index: 2;
 }
-.quiz-container{
+.quiz-container {
   position: relative;
   height: 200px;
   margin-top: 40px;
 }
 
-
 .page {
   display: flex;
   flex-direction: column;
-
-
 }
-  
+
 .option {
-  background-color: yellow;
+  text-align: center;
+  border-radius: 5px;
+  background-color: palevioletred;
+  color: white;
+  margin: 2px;
 }
+
 
 label {
   display: flex;
   align-items: center;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#right-or-wrong {
+  animation: pop 0.4s ease-in-out;
+  animation-delay: 1s;
 }

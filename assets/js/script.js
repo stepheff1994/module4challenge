@@ -81,15 +81,15 @@ function buildQuestions() {
     </label>
     <label>
         <input class= "radiobtn" type="radio" name="question${i + 1}" value="2">
-        2: ${questions[i].answers["2"]}
+        <p class="option">2: ${questions[i].answers["2"]}</p>
 	 </label>
     <label>
         <input class= "radiobtn" type="radio" name="question${i + 1}" value="3">
-        3: ${questions[i].answers["3"]}
+        <p class="option">3: ${questions[i].answers["3"]}</p>
     </label>
     <label>
         <input class= "radiobtn" type="radio" name="question${i + 1}" value="4">
-        4: ${questions[i].answers["4"]}
+        <p class="option">4: ${questions[i].answers["4"]}</p>
     </label>
     </div>`;
 
@@ -103,12 +103,12 @@ function buildQuestions() {
 
 startBtn.addEventListener("click", function () {
   document.querySelector("#start-button").style.visibility = "hidden"
-  var userTime = 20
+  var userTime = 30
   
     interval = setInterval(function (){
       if (userTime > 0) {
       userTime--
-      document.querySelector("#timer").innerHTML = `<p>time remaining: ${userTime}<p>`
+      document.querySelector("#timer").innerHTML = `<p>seconds remaining: ${userTime}<p>`
       console.log(userTime)
       } else {  
       pages[currentPage].classList.remove("active-slide")
